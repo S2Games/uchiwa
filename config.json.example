@@ -27,6 +27,11 @@
     "user": "admin",
     "pass": "secret",
     "stats": 10,
-    "refresh": 10000
+    "refresh": 10000,
+    "socket": "if proxied behind apache, delete the second transports line to make the dashboard load much faster",
+    "socket": {
+        "transports" : ["xhr-polling", "jsonp-polling"],
+        "transports" : []
+    }
   }
 }

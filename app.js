@@ -89,6 +89,13 @@ if (!_.isArray(config.sensu)) {
   config.sensu[0].name = config.sensu[0].host;
 }
 
+/**
+ * Websocket config
+ */
+if (config.uchiwa.socket && config.uchiwa.socket.transports && config.uchiwa.socket.transports.length > 0) {
+  io.set('transports', config.uchiwa.socket.transports);
+}
+
 var sensu = {};
 var stats = new Stats(config.uchiwa);
 var datacenters = [];
